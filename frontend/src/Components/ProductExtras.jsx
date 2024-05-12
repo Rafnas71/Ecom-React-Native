@@ -14,19 +14,18 @@ const ProductExtras = ({ item, index }) => {
           setInfoIndex(index);
         }}
         style={{
-          marginTop: 30,
           flexDirection: "row",
           width: "100%",
           justifyContent: "space-between",
           borderBottomColor: Colors.lightgray,
           borderBottomWidth: 2,
-          paddingVertical: 5,
+          paddingVertical: 10,
         }}
       >
-        <Text style={{ fontSize: 20 }}>{item.title}</Text>
+        <Text style={{ fontSize: 25 }}>{item.title}</Text>
         <AntDesign name="down" size={20} color="black" />
       </TouchableOpacity>
-      {toggle && infoIndex === index && <Text style={{paddingBottom:10}}>{item.details}</Text>}
+      {toggle && infoIndex === index && <Text style={{fontSize:15}}>{item.details}</Text>}
     </View>
   );
 };

@@ -13,7 +13,7 @@ const ProductDetails = () => {
   const route = useRoute();
   const productInfo = route.params.item;
   return (
-    <SafeAreaView style={{ flex: 0.99}}>
+    <SafeAreaView style={{ flex: 1 }}>
       <View>
         <View
           style={{
@@ -53,7 +53,9 @@ const ProductDetails = () => {
           <Entypo name="share-alternative" size={30} color="black" />
         </View>
       </View>
-      <ScrollView style={{ paddingHorizontal: 10, paddingTop: 10 ,paddingBottom:10}}>
+      <ScrollView
+        style={{ paddingHorizontal: 10, paddingTop: 10, paddingBottom: 10 }}
+      >
         <View
           style={{
             flexDirection: "row",
@@ -73,13 +75,30 @@ const ProductDetails = () => {
             ₹ {productInfo.price}
           </Text>
         </View>
-        {productInfo.extraInfo.map((info, index) => (
+        <View style={{marginTop:10,paddingBottom:20}}>
+          {productInfo.extraInfo.map((info, index) => (
           <ProductExtras item={info} index={index} />
         ))}
+        </View>
+        
       </ScrollView>
-      <TouchableOpacity style={{height:70,width:"90%",borderRadius:10, backgroundColor:Colors.primary ,alignSelf:"center",justifyContent:"center",alignItems:"center",}}>
-        <Text style={{fontSize:25,color:Colors.white,fontWeight:500,}}>Add to Cart</Text>
-      </TouchableOpacity>
+      <View style={{paddingBottom:10}}>
+        <TouchableOpacity
+          style={{
+            height: 70,
+            width: "90%",
+            borderRadius: 10,
+            backgroundColor: Colors.primary,
+            alignSelf: "center",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Text style={{ fontSize: 25, color: Colors.white, fontWeight: 500 }}>
+            Add to Cart
+          </Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };
